@@ -20,3 +20,6 @@ class Car(models.Model):  # Nome da tabela no banco de dados
     # Valor do carro (número decimal), pode ser deixado em branco ou nulo
 
 
+    def __str__(self): #faz aparecer o modelo do carro em vez de object
+        return self.model
+
