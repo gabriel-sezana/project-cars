@@ -30,9 +30,13 @@ class Car(models.Model):  # Nome da tabela no banco de dados
     model_year = models.IntegerField(blank=True, null=True)  
     # Ano do modelo (inteiro), pode ser deixado em branco ou nulo
 
+    plate = models.CharField(max_length=10,blank=True,null=True)
+
+    
     value = models.FloatField(blank=True, null=True)  
     # Valor do carro (número decimal), pode ser deixado em branco ou nulo
 
+    photo = models.ImageField(upload_to='cars/', blank=True, null=True) # as imagens vao ficar salvas na pasta principal cars
 
     def __str__(self): #faz aparecer o modelo do carro em vez de object
         return self.model
